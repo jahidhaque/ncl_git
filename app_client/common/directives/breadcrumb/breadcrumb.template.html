@@ -1,0 +1,76 @@
+<div class="breadcrumb-bar relative">
+	<div class="container">
+		<div class="row">
+			<div class="hidden-xs col-sm-9 col-md-9 col-lg-9">
+				<ol class="list-inline breadcrumb-list">
+					<li class="{{brdvm.noBorder}}"><a href="/" title="Go back to home page">Home</a></li>
+					<li ng-if="brdvm.shownextcrumb === true">
+						<span class="regular active">{{brdvm.path}}</span>
+					</li>
+				</ol>
+			</div>
+
+			<div class="col-xs-21 col-sm-12 col-md-12 col-lg-12 product-search relative">
+				<form>
+					<input type="text" placeholder="Search your desire product" class="form-control">
+					<button type="submit"><i class="fa fa-search" aria-hidden='true'></i></button>
+				</form>
+			</div>
+
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 rewards-promotion" 
+				ng-if="brdvm.customerPromo === true">
+				<a href="" title="Get discount and poromotional code" data-ui-opt='setupPromo'>
+					<span class="hidden-xs">Get Rewards</span>
+					<i class="fa fa-gift" aria-hidden="true"></i>
+				</a>
+			</div>
+		</div>
+		
+		<div class="operation gift-promo m-b-4 hidden" data-ui-target="common">
+			<div class="row">
+				<!-- when rewards are not being setted. -->
+				<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24" ng-if="brdvm.promoteRewards === true">
+					<h2 class="subtitle light text-center">
+						You haven't enrolled with our <strong>rewards program</strong>. Please enrol now to get 
+						great monthly discount when you shop.
+					</h2>
+					<a href="#" ng-click="brdvm.setRewards()" title="Enrol Now with our rewards program" class="btn btn-success quarter center-block">
+						Enrol Now <span class="medium m-l-1">{{brdvm.currentUser.name}}</span>
+					</a>
+				</div>
+				
+				<!-- when rewards set successfully -->
+				<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24" ng-if="brdvm.rewardSetted === true">
+					<h2 class="sub-big-title thin text-center" ng-if="brdvm.successFlash === true">
+						You have successfully setup our <strong>rewards programme</strong>. Enjoy shopping with discount from now on.
+					</h2>
+					<p class="text-center sub-title light" ng-if="brdvm.successFlash === true">
+						We will email your discount code on <br/>
+						<span class="bold sub-title">{{brdvm.currentUser.email}}</span>
+					</p>
+					
+				</div>
+
+				<!-- after rewards has been set -->
+				<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24" ng-if="brdvm.hasRewards === true">		
+					<p class="text-center sub-title light">
+						You are now enjoying our rewards programme. <strong>Thank You </strong>.
+					</p>
+				</div>
+				
+				<!-- general rewards programme for public visitor -->
+				<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24" 
+					ng-if="brdvm.generalRewardPromo === true">
+					<h2 class="subtitle light text-center">
+						<strong>Become a member today</strong> &amp; recieve <strong>great discount</strong> through our <strong>rewards program</strong>. Please enrol now.
+					</h2>
+
+					<a href="/register" title="Register now to receive monthly rewards" class="btn btn-success quarter center-block">
+						Register Now &amp; Receive Great Discount
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
