@@ -1,0 +1,94 @@
+{
+  "_id": {
+    "$oid": "57e14a81bd227256e896f9f2"
+  },
+  "name": "Central Control System",
+  "description": "We would like to control the entire app from here",
+  "operations": [
+    {
+      "name": "national",
+      "totalPost": 109,
+      "lastPost": "Last post from national",
+      "status": "Active",
+      "_id": {
+        "$oid": "57e14ab1bd227256e896f9f3"
+      },
+      "keywords": [
+        "national post", "bd news", "bd post", "bd blog"
+      ]
+    },
+    {
+      "name": "international",
+      "totalPost": 109,
+      "lastPost": "Last post from international",
+      "status": "Active",
+      "_id": {
+        "$oid": "57e14ad2bd227256e896f9f4"
+      },
+      "keywords": [
+        "international post", "international news", "international article", "international blog"
+      ]
+    },
+    {
+      "name": "islam & life",
+      "totalPost": 450,
+      "lastPost": "Last post from islam & life",
+      "status": "Active",
+      "_id": {
+        "$oid": "57e14babbd227256e896f9f5"
+      },
+      "keywords": [
+        "islamic post", "islamic news", "islam reseach post", "islamic blog"
+      ]
+    },
+    {
+      "name": "al-quran",
+      "totalPost": 450,
+      "lastPost": "Last post from al-quran",
+      "status": "Active",
+      "_id": {
+        "$oid": "57e14c9abd227256e896f9f6"
+      },
+      "keywords": [
+        "al-quran post", "al-quran news", "al-quran reseach post", "al-quran blog"
+      ]
+    },
+    {
+      "name": "books",
+      "totalPost": 12,
+      "lastPost": "Last post from books",
+      "status": "Active",
+      "_id": {
+        "$oid": "57e14d17bd227256e896f9f7"
+      },
+      "keywords": [
+        "books post", "books news", "latest books", "download books"
+      ]
+    },
+    {
+      "name": "history",
+      "totalPost": 345,
+      "lastPost": "Last post from history",
+      "status": "Active",
+      "_id": {
+        "$oid": "57e14d48bd227256e896f9f8"
+      },
+      "keywords": [
+        "history post", "history news", "latest history post", "islamic history", "history lession"
+      ]
+    },
+    {
+      "name": "Video",
+      "totalPost": 12,
+      "lastPost": "latest video post",
+      "status": "Active",
+      "_id": {
+        "$oid": "57e4ea9069638f3d3c9743c7"
+      },
+      "keywords": [
+        "video post", "video lectures"
+      ]
+    }
+  ],
+  "__v": 7
+}

@@ -1,0 +1,67 @@
+<!-- navigation -->
+<navigation></navigation>
+
+<div class="scontent-full">
+	<!-- content -->
+	<div class="container">
+		<h1 class="text-center title">Where We are</h1>
+		<hr>
+		<br/>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.864372933958!2d-1.6541396840995028!3d54.9754775803526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e7714455aad6f%3A0x595efd163857e04a!2sNewcastle+Halal+Foodstore!5e0!3m2!1sen!2suk!4v1500328471428" width="1170" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<br/>
+	</div>
+	
+	<div class="get-in-touch">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-24 col-sm-9 col-md-9 col-lg-9">
+					<div class="box shadow">
+						<h2 class="sub-big-title light text-center">Our Address</h2>
+						<hr>
+						<h3 class="bold subtitle text-center">Newcastle Halal Foodstore</h3>
+						<h3 class="bold subtitle text-center">28 West Rd, Newcastle upon Tyne </h3>
+						<h3 class="bold subtitle text-center">NE4 9HB </h3>
+						<h3 class="bold subtitle text-center">0191 272 3232 </h3>
+					</div>
+				</div>
+				<div class="col-xs-24 col-sm-15 col-md-15 col-lg-15">
+					<div class="box shadow">
+						<h3 class="sub-big-title light text-center">Get in touch</h3>
+						<hr>
+						<form ng-submit="aboutvm.sendMessage()">
+							<div class="alert alert-danger" ng-if="aboutvm.form_error === true">
+								{{aboutvm.form_error_message}}
+							</div>
+							<div class="form-group">
+								<label for="sender">Name *</label>
+								<input id="sender" type="text" ng-model="aboutvm.message.sender" 
+									class="form-control threequarter" placeholder="Your name">
+							</div>
+
+							<div class="form-group">
+								<label for="contact">Contact Email or Phone *</label>
+								<input id="contact" type="text" ng-model="aboutvm.message.contact" 
+									class="form-control half" placeholder="Your email or phone">
+							</div>
+
+							
+							<div class="form-group">
+								<label for="message">Message *</label>								
+								<textarea id='message' cols='5' rows="5" ng-model="aboutvm.message.query" class="form-control" placeholder="Your query or message"></textarea>
+							</div>
+
+							<div class="form-group">
+								<button type="submit" class="btn btn-info">Send Message</button>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- footerGeneric -->
+<footer-generic></footer-generic>

@@ -1,0 +1,18 @@
+{
+	"notification": [
+		{
+			"system": "Kites ltd",
+			"developer": "Jahid haque",
+			"live_time": "app running for 30 days"
+		}
+	],
+	"announcement": [
+		{
+			"title": "maintaince",
+			"Description": "App will be under maintaince for next 3 hours"
+		}
+	],
+
+	"keywords": ["Node app", "Express", "mongodb", "angular", "Web app developers", "Online Solutions"],
+	"content": ["software service", "online-schopping", "Customer Service oriented IT business"]
+}

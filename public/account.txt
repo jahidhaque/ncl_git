@@ -1,0 +1,44 @@
+gmail account ----
+fname: newcastlehalal
+lname: halal
+mail: nclhalal@gmail.com
+password: ncl@ne49hb
+dob: june 12, 1994
+
+
+----digital ocean----
+email: nclhalal@gmail.com
+pass: ncl@ne49hb
+Droplet Name: ubuntu-2gb-lon1-01
+IP Address: 138.68.129.96
+Username: root
+Password: 9a005647bf951fdeb20bf1dcfc
+new pass: T0jehruw@ne49hb
+
+---new user for deploy---
+sudo useradd --create-home -s /bin/bash ncldep
+//adding ncldep to sudo group
+sudo adduser ncldep sudo
+//create password for ncldep
+sudo passwd ncldep
+pass: T0jehruw
+
+//now login with this new user account.
+ssh ncldep@ipaddress
+
+//now we need to copy the ssh key to the server for password less work (optional)
+scp ~/.ssh/id_rsa.pub deploy@url.com:~/.ssh/authorized_keys
+
+
+
+---------godaddy account------------
+domain: newcastlehalal.co.uk
+domain: newcastlehalal.com
+
+username: nclhalal@gmail.com
+pass: ncl@ne49hbHalal
+pin: 1981
+customer number: 162179567
+
+
+

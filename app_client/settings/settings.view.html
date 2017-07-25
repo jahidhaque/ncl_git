@@ -1,0 +1,133 @@
+<!-- navigation -->
+<navigation></navigation>
+
+<!-- container -->
+<div class="container-fluid">
+	<div class="dashboard m-t-3 m-b-3 relative">
+		<div class="row">
+			<div class="col-xs-24 col-sm-7 col-md-7 col-lg-7" data-ui='expand'>
+				<div class="box shadow inventory-notification pull-left">
+					<div class="box-header p-b-1">
+						<h1 class="pull-left small-title no-margin light">Inventory Status</h1>
+						<span class="pull-right pointer"><i class="fa fa-bell" aria-hidden='true'></i></span>
+						<span class="pull-right m-r-1 pointer" data-ui-target='expand'><i class="fa fa-expand" aria-hidden="true"></i></span>
+					</div>			
+					<div class="box-body">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-24 col-sm-11 col-md-11 col-lg-11" data-ui="add-product-expand">
+				<div class="box shadow add-product pull-left">
+					<div class="box-header p-b-1">
+						<h1 class="pull-left small-title no-margin light">Add new product</h1>
+					</div>
+			
+					<div class="box-body">
+						
+						<div class="alert alert-danger m-t-1" ng-show="sysvm.error">
+							<p class="small-title no-margin light">{{sysvm.message}}</p>
+						</div>
+
+						<div class="alert alert-success m-t-1" ng-show="sysvm.successon">
+							<p class="small-title no-margin light">{{sysvm.message}}</p>
+						</div>
+
+						<form ng-submit='sysvm.saveProduct()' class="product-form" 
+							enctype="multipart/form-data" name="product_form">
+							<div class="form-group m-b-1 m-t-1">
+								<label for="product_name" class="small-title light">Product name</label>
+								<input class="form-control threequarter" type="text" id="product_name" placeholder="Product name. ex - mango" ng-model='sysvm.products.product_name'>
+							</div>
+
+							<div class="form-group m-b-1 m-t-1">
+								<label for="product_cat" class="small-title light">Product Category</label>
+								<select class="form-control half" name="product_cat" id="product_cat" ng-model="sysvm.products.category">
+									<option value="" selected="selected">Select Product Category</option>
+									<option value="grocery">Grocery</option>
+									<option value="meatandfish">Meat and fish</option>
+									<option value="riceandflour">Rice and flour</option>
+									<option value="kitchenandhome">kitchen and home</option>
+									<option value="readyfood">readyfood</option>
+									<option value="vegetableandfruits">vegetable and fruits</option>
+									<option value="herbs">Herbs</option>
+
+								</select>
+							</div>
+
+							<div class="form-group m-b-1 m-t-1">
+								<label for="subcat" class="small-title light">Sub-category</label>
+								<select class="form-control half" name="subcat" id="subcat" ng-model="sysvm.products.subcat">
+									<option value="" selected="selected">Select sub category</option>
+									<option value="fruits">Furits</option>
+									<option value="vegetable">Vegetable</option>
+									<option value="lamb">Lamb</option>
+									<option value="chicken">Chicken</option>
+									<option value="beef">Beef</option>
+									<option value="rice">Rice</option>
+									<option value="rice">Spice</option>
+								</select>
+							</div>
+
+							<div class="form-group m-b-1 m-t-1">
+								<label for="product_unit" class="small-title light">Product unit</label>
+								<select class="form-control half" name="product_unit" id="product_unit" ng-model="sysvm.products.unit">
+									<option value="" selected="selected">Select Product Unit</option>
+									<option value="1">1 piece</option>
+									<option value="1kg">1 kg</option>
+									<option value="1pack">1pack</option>
+									<option value="1bag">1bag</option>
+								</select>
+							</div>
+
+							<div class="form-group m-b-1 m-t-1">
+								<label for="inventory_unit" class="small-title light">Inventory Unit</label>
+								<input class="form-control quarter" type="text" id="inventory_unit" 
+									placeholder="Inventory unit" ng-model="sysvm.products.inventoryunit">
+							</div>
+
+							<div class="form-group m-b-1 m-t-1">
+								<label for="product_price" class="small-title light">Product price</label>
+								<input class="form-control quarter" type="text" id="product_price" 
+									placeholder="&pound; Product price" ng-model="sysvm.products.price">
+							</div>
+
+							<div class="form-group m-b-3 m-t-1">
+								<label for="product_desc" class="small-title light">Product Description</label>
+								<input class="form-control" type="text" id="product_desc" 
+									placeholder="product description" ng-model="sysvm.products.desc">
+							</div>
+
+							<div class="form-group m-b-1 m-t-1">
+								<label for="product_img" 
+									class="fileupload upload-blue m-t-1 m-b-1 pointer">Product Image <i class="fa fa-upload m-l-1" aria-hidden="true"></i></label>
+								<input class="hidden" type="file" file-model="product_img" 
+									name="product_pic" id="product_img">
+							</div>
+
+							<button type="submit" class="btn btn-primary btn-add-product">Save Product</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6" data-ui="product-offers">
+				<div class="box shadow product-offers pull-left">
+					<div class="box-header p-b-1">
+						<h1 class="pull-left small-title no-margin light">Product offers</h1>
+					</div>
+
+					<div class="box-body">
+						hi
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- footerGeneric -->
+<footer-generic></footer-generic>

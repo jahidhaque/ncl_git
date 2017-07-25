@@ -1,0 +1,41 @@
+<navigation></navigation>
+
+<div class="loginContainer">
+	<div class="container">
+		<h1 class="text-center title">Member's Login</h1>
+
+		<div class="col-xs-24 col-sm-12 col-md-12 col-lg-12 col-lg-offset-6">
+			<div class="boxContainer">
+				<div class="loginContainer boxShadow">										
+					<form ng-submit="vm.onlogin()">
+						<div class="form-group">
+							<label for="username">Email</label>
+							<input type="email" id="username" ng-model="vm.credentials.email" class="form-control" placeholder="username">
+						</div>
+
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" id="password" ng-model="vm.credentials.password" 
+							class="form-control" placeholder="password">
+						</div>
+
+						<div ng-show="vm.errors" class="alert alert-warning alert-dismissible" role="alert">
+						  	<strong>Warning!</strong> {{vm.errors.error}}
+						</div>
+						
+						<div class="form-group">
+							<button type="submit" class="btn btn-success">Login</button>
+						</div>
+						<p class="subtitle">
+							Don't have an account, please <a href='/register' title="Create an account with us">Register</a>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- footerGeneric -->
+<footer-generic></footer-generic>

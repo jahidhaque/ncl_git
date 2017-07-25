@@ -1,0 +1,82 @@
+<navigation></navigation>
+
+
+<!-- site breadcrumb -->
+<bread-crumb></bread-crumb>
+
+<!-- content -->
+<div class="container">
+	<h1 class="big-title text-center light" ng-if="sngprovm.error">
+		{{sngprovm.message}}
+	</h1>
+	
+	<div class="single-product-container" ng-if="sngprovm.success">
+		<div class="row">
+			<div class="col-xs-24 col-sm-12 col-md-12 col-lg-12">
+				<div class="productBox shadow">
+					<div class="product-title pull-left">
+						<h1 class="small-title light">
+						<span class="pull-left">{{sngprovm.product.name}} <strong class="m-r-1 m-l-1">{{sngprovm.product.unit}} </strong></span>
+						<span class="pull-right">{{sngprovm.product.price | currency: "£"}}</span>
+					</h1>
+					</div>
+					
+										
+					<img class="product-img" src="/img/products/{{sngprovm.product.image}}" alt="{{sngprovm.product.name}}'s image" />
+
+					<p class="small-title light">{{sngprovm.product.desc}}</p>
+
+				</div>
+			</div>
+
+			<div class="col-xs-24 col-sm-12 col-md-12 col-lg-12">
+				<div class="productBox shadow">
+					<h2 class="small-title light">Buy {{sngprovm.product.name}} </h2>
+					<hr>
+					<shopping-cart></shopping-cart>
+
+					<div class="comment-form" ng-if="cartvm.commentForm === true">
+						<form ng-submit="cartvm.makeComment()">
+							<br/>
+							<div class="alert alert-danger" ng-show="cartvm.commentError">
+								<p class="xs-title no-margin regular">{{cartvm.commentError_message}}</p>
+							</div>
+
+							<div class="form-group">
+								<textarea class="form-control light sub-title" col='2' rows="2" placeholder="make your comment" ng-model="cartvm.comment.message"></textarea>
+							</div>
+
+							<div class="form-group">
+								<a href="" ng-click="cartvm.cancleComment()" title="cancle comment" class="btn btn-info pull-left">Cancle</a>
+								<button type="submit" class="btn btn-success pull-right">Save</button>
+							</div>
+						</form>
+						<div class="clearfix"></div>
+					</div>
+
+					<!-- show comments -->
+					<div class="comemnts-box" ng-if="cartvm.showComments === true">
+						<ul class="list comment-list">
+							<li ng-repeat="comment in cartvm.productComments">
+								<p class="no-margin">
+									<span class="xs-title medium commenter"><storng>{{comment.commenter}}</storng></span>
+									<span class="xs-title light comment">{{comment.comment}}</span>		
+								</p>
+								<p class="no-margin">
+									<span class="xs-title medium date-time">{{comment.createdat | date: 'MMM-dd, HH.mm a'}}</span>
+								</p>
+								
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<!-- footerGeneric -->
+<footer-generic></footer-generic>

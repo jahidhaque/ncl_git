@@ -1,0 +1,191 @@
+<!-- navigation -->
+<navigation></navigation>
+
+<!-- site breadcrumb -->
+<bread-crumb></bread-crumb>
+
+<div class="slider-container">
+	<div class="slider-area">
+		<div class="container-fluid">
+			<div id="site_carousel" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#site_carousel" data-slide-to="0" class="active"></li>
+			    <li data-target="#site_carousel" data-slide-to="1"></li>
+			    <li data-target="#site_carousel" data-slide-to="2"></li>
+			  </ol>
+
+			  <div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<h1 class="text-center big-title thin">Offer 1</h1>
+						<hr>
+					</div>
+
+					<div class="item">
+						<h1 class="text-center big-title thin">Offer 2</h1>
+						<hr>
+					</div>
+
+					<div class="item">
+						<h1 class="text-center big-title thin">Offer 3</h1>
+						<hr>
+					</div>
+			  </div>
+			  
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="landing-products" ng-init="hmvm.loadProducts()" ng-if="hmvm.errorOn">
+	<div class="container" ng-if="hmvm.errorOn">
+		<h1 class="big-title text-center">{{hmvm.message}}</h1>
+	</div>
+</div>
+
+<div class="landing-products" ng-init="hmvm.loadProducts()">
+	<div class="home-landing">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">
+					<a href="/vegetableandfruits" title="Check out our vegetable and fruits collection">
+						<div class="box shadow promo-box wbg box-radius space-for-mobile">
+							<h2 class="small-title light text-center">Vegetable &amp; Fruits</h2>
+							<hr>
+							<img src="img/emarket/vegetable-landing.png" alt="fish image">
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">
+					<a href="/meatandfish" title="Check out our meat and fish collection">
+						<div class="box shadow promo-box wbg box-radius space-for-mobile">
+							<h2 class="small-title light text-center">Meat and Fish</h2>
+							<hr>
+							<img src="img/emarket/fish-landing.png" alt="fish image">
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">
+					<a href="/readyfood" title="Check out our ready meal collection">
+						<div class="box shadow promo-box wbg box-radius space-for-mobile">
+							<h2 class="small-title light text-center">Ready Food</h2>
+							<hr>
+							<img src="img/emarket/readyfood-landing.png" alt="fish image">
+						</div>
+					</a>
+				</div>
+				<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">
+					<a href="/herbs" title="Check out our herbs collection">
+						<div class="box shadow promo-box wbg box-radius space-for-mobile">
+							<h2 class="small-title light text-center">Herbs</h2>
+							<hr>
+							<img src="img/emarket/herbs-landing.png" alt="herbs image">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" ng-if="hmvm.success === true">
+		<div class="row">
+			<div class="col-xs-24 col-sm-10 col-md-10 col-lg-10">
+				<div class="box wbg shadow landing-product-main" ng-repeat="product in hmvm.products | limitTo: 1">
+					<a href="singleproduct/{{product.name}}" title="{{product.name}}">
+						<img src="/img/products/{{product.image}}" alt="{{product.name}}'s image" />
+					</a>
+
+					<h2 class="small-title light">
+						{{product.name}} {{product.unit}}
+						<span class="small-title regular pull-right">{{product.price | currency: "£"}}</span>
+					</h2>
+				</div>
+			</div>
+			<div class="col-xs-24 col-sm-14 col-md-14 col-lg-14">
+				<div class="row">
+					<div class="col-xs-24 col-sm-12 col-md-12 col-lg-12">
+						<div class="box wbg shadow sub-landing">
+							<a href="singleproduct/{{hmvm.subproduct.name}}" title="{{hmvm.subproduct.name}}">
+								<img src="/img/products/{{hmvm.subproduct.image}}" alt="{{hmvm.subproduct.name}}'s image" />
+							</a>
+
+							<h2 class="small-title light">
+								{{hmvm.subproduct.name}} {{hmvm.subproduct.unit}}
+								<span class="small-title regular pull-right">{{hmvm.subproduct.price | currency: "£"}}</span>
+							</h2>
+
+						</div>
+					</div>
+					<div class="col-xs-24 col-sm-12 col-md-12 col-lg-12">
+						<div class="box wbg shadow sub-landing">
+							<a href="singleproduct/{{hmvm.subproducttwo.name}}" title="{{hmvm.subproducttwo.name}}">
+								<img src="/img/products/{{hmvm.subproducttwo.image}}" alt="{{hmvm.subproducttwo.name}}'s image" />
+							</a>
+
+							<h2 class="small-title light">
+								{{hmvm.subproducttwo.name}} {{hmvm.subproducttwo.unit}}
+								<span class="small-title regular pull-right">{{hmvm.subproducttwo.price | currency: "£"}}</span>
+							</h2>
+						</div>
+					</div>
+				</div>
+
+				<div class="sub-landing-top">
+					<div class="row">
+						<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+							<div class="box wbg shadow sub-landing">
+								<a href="singleproduct/{{hmvm.subproducttop.name}}" title="{{hmvm.subproducttop.name}}">
+									<img src="/img/products/{{hmvm.subproducttop.image}}" alt="{{hmvm.subproducttop.name}}'s image" />
+								</a>
+
+								<h2 class="small-title light">
+									{{hmvm.subproducttop.name}} {{hmvm.subproducttop.unit}}
+									<span class="small-title regular pull-right">{{hmvm.subproducttop.price | currency: "£"}}</span>
+								</h2>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" ng-if="hmvm.errorOn === true">
+		<h1 class="text-center big-title light">Failed to load products. Please contact admin</h1>
+		<hr>
+	</div>
+</div>
+
+
+<!-- promo offers and delivery -->
+<div class="poromo-delivery">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">
+				<div class="box shadow promo-box wbg box-radius border-shopping space-for-mobile">
+					<h3 class="small-title light"><i class="m-r-1 fa fa-gift"></i>Rewards For Shopping</h3>
+				</div>
+			</div>
+			<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">
+				<div class="box shadow promo-box wbg box-radius border-delivery space-for-mobile">
+					<h3 class="small-title light"><i class="m-r-1 fa fa-truck"></i>Home Delivery</h3>
+				</div>
+			</div>
+
+			<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">
+				<div class="box shadow promo-box wbg box-radius border-pay space-for-mobile">
+					<h3 class="small-title light"><i class="m-r-1 fa fa-cc-visa"></i>Pay Online</h3>
+				</div>
+			</div>
+
+			<div class="col-xs-24 col-sm-6 col-md-6 col-lg-6">
+				<div class="box shadow promo-box wbg box-radius border-collect space-for-mobile">
+					<h3 class="small-title light"><i class="m-r-1 fa fa-mouse-pointer"></i>Collect Your Orders</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footerGeneric -->
+<footer-generic></footer-generic>
