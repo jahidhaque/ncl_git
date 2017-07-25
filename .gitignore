@@ -1,4 +1,4 @@
-"app_client/*/.js",
-"public/*.txt",
-"public/libs/",
-"public/sass/"
+app_client/*/.js,
+public/*.txt,
+public/libs/,
+public/sass/
