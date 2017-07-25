@@ -1,2 +1,31 @@
-{"_id":{"$oid":"5949358b3eb68f47df776dd3"},"status":"admin","hash":"975a051809f2f290099a191ebef56634f772f9b211b65b3a9824a70e2d4bec18d916ec74366093c714c2cf17f29f885b9a1f5d7ab38e731c7cdb7f466c4930cc","salt":"74246294747100ed51a1cfa784eb04fb","email":"haque.jahid@gmail.com","name":"jahidhaque","rewards":[],"history":[],"profile":[],"__v":0}
-{"_id":{"$oid":"59642a3b8c42f7374d01f7a5"},"status":"customer","hash":"441b71805388f66afecbb915fcde2dacce5778fdbf80003847f74fa6ef4973f2626475e0df612869dde816aa9804c3b2ea853736fd91907f7ff2cde8e5f86d76","salt":"b97e8ad3b994f712ad1575205f18eb52","email":"jahid.haque@yahoo.com","name":"Jahid","rewards":[{"platform_type":"Gold","_id":{"$oid":"5967a24a5c012014c4b1f7d8"},"created_at":{"$date":"2017-07-13T16:39:38.298Z"},"rewards_on":true}],"history":[],"profile":[],"__v":0}
+{
+	"_id" : ObjectId("5949358b3eb68f47df776dd3"),
+	"status" : "admin",
+	"hash" : "975a051809f2f290099a191ebef56634f772f9b211b65b3a9824a70e2d4bec18d916ec74366093c714c2cf17f29f885b9a1f5d7ab38e731c7cdb7f466c4930cc",
+	"salt" : "74246294747100ed51a1cfa784eb04fb",
+	"email" : "haque.jahid@gmail.com",
+	"name" : "jahidhaque",
+	"rewards" : [ ],
+	"history" : [ ],
+	"profile" : [ ],
+	"__v" : 0
+}
+{
+	"_id" : ObjectId("59642a3b8c42f7374d01f7a5"),
+	"status" : "customer",
+	"hash" : "441b71805388f66afecbb915fcde2dacce5778fdbf80003847f74fa6ef4973f2626475e0df612869dde816aa9804c3b2ea853736fd91907f7ff2cde8e5f86d76",
+	"salt" : "b97e8ad3b994f712ad1575205f18eb52",
+	"email" : "jahid.haque@yahoo.com",
+	"name" : "Jahid",
+	"rewards" : [
+		{
+			"platform_type" : "Gold",
+			"_id" : ObjectId("5967a24a5c012014c4b1f7d8"),
+			"created_at" : ISODate("2017-07-13T16:39:38.298Z"),
+			"rewards_on" : true
+		}
+	],
+	"history" : [ ],
+	"profile" : [ ],
+	"__v" : 0
+}
