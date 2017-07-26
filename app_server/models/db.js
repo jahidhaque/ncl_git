@@ -1,7 +1,7 @@
 var mongoose = require( 'mongoose' );
 var gracefulShutdown;
 mongoose.Promise = global.Promise;
-var dbURI = 'mongodb://localhost/ncl_halal';
+var dbURI = 'mongodb://127.0.0.1:27017/ncl_halal';
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function () {
