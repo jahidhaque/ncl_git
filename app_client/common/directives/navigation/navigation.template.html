@@ -26,7 +26,8 @@
 
               <ul class="nav navbar-nav navbar-right staticMenu">
                 <li ng-hide="navvm.isLoggedIn">
-                  <a href="/#register/?page={{navvm.currentPath}}">Register</a></li>
+                  <a href="/#register/?page={{navvm.currentPath}}">Register</a>
+                </li>
                 <li ng-hide="navvm.isLoggedIn"><a href="/#login/?page={{navvm.currentPath}}">Login</a></li>  
                 <li class="{{sysvm.active}}" ng-show="navvm.adminon"><a href="/#settings"><i class="fa fa-cogs m-r-2" are-hidden="true"></i> Settings</a></li>
                 <li ng-show="navvm.isLoggedIn"><a href="/#profile" title="{{navvm.currentUser.name}}'s profile">{{navvm.currentUser.name}}</a></li> 

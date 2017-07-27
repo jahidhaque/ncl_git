@@ -1,0 +1,21 @@
+{
+	"emarket": [
+		{			
+			"title": "We support e-commerce",
+			"status": "true",
+			"expiry": "20th Nov, 2016"			
+		}
+	],
+
+	"announcement": [
+		{
+			"title": "system maintaince",
+			"status": "true",
+			"description": "Our app will be under maintaince on 30th Nov, 2016 for 3 hours"
+		}
+	],
+
+	"keywords": ["Node app", "Express", "mongodb", "angular", "Web app developers", "Online Solutions"],
+
+	"content":["software service", "online-schopping", "Customer Service oriented IT business"]
+}

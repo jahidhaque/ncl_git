@@ -9,6 +9,7 @@ var 		express 		=		require('express'),
 			morgan 			=		require('morgan'),
 			fs 				=		require('fs'),
 			passport 		=		require('passport'),
+			uglifyjs 		=		require('uglify-js'),
 			bodyParser 		=		require('body-parser');
 
 
@@ -45,6 +46,55 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + path.join('/public')));
 app.use(express.static(__dirname + path.join('/app_client')));
 
+/*
+|----------------------------------------------------------------
+| minifing angular js
+|----------------------------------------------------------------
+*/
+var 		client_files 	= [
+"app_client/app.js",
+"app_client/common/services/authentication/authentication.service.js",
+"app_client/common/services/system/system.service.js",
+"app_client/common/services/cart/cart.service.js",
+"app_client/common/services/generalqueries/generalqueries.service.js",
+"app_client/common/services/fileupload/fileupload.service.js",
+"app_client/common/directives/navigation/navigation.directive.js",
+"app_client/common/directives/breadcrumb/breadcrumb.directive.js",
+"app_client/common/directives/breadcrumb/breadcrumb.controller.js",
+"app_client/common/directives/productlanding/productlanding.directive.js",
+"app_client/common/directives/productlanding/productlanding.controller.js",
+"app_client/common/directives/shoppingcart/shoppingcart.directive.js",
+"app_client/common/directives/shoppingcart/shoppingcart.controller.js",
+"app_client/common/directives/footerGeneric/footerGeneric.directive.js",
+"app_client/common/directives/navigation/navigation.controller.js",
+"app_client/common/directives/fileModel/fileModel.directive.js",
+"app_client/home/home.controller.js",
+"app_client/grocery/grocery.controller.js",
+"app_client/meatandfish/meatandfish.controller.js",
+"app_client/riceandflour/riceandflour.controller.js",
+"app_client/kitchenandhome/kitchenandhome.controller.js",
+"app_client/readyfood/readyfood.controller.js",
+"app_client/vegetableandfruits/vegetableandfruits.controller.js",
+"app_client/herbs/herbs.controller.js",
+"app_client/aboutus/aboutus.controller.js",
+"app_client/login/login.controller.js",
+"app_client/register/register.controller.js",
+"app_client/profile/profile.controller.js",
+"app_client/settings/settings.controller.js",
+"app_client/bye/bye.controller.js",
+"app_client/products/singleproducts.controller.js"
+];
+
+var uglified = uglifyjs.minify(client_files, {compress: true});
+
+fs.writeFile('public/js/app.master.js', uglified.code, function(err){
+	if(err){
+		console.log(err);
+	}
+	else{
+		console.log('scripted minified');
+	}
+});
 
 
 /*

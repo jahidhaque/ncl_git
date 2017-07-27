@@ -1,0 +1,4 @@
+mongoexport --db test --collection traffic --out traffic.json
+
+
+mongoimport --db users --collection contacts --file contacts.json
