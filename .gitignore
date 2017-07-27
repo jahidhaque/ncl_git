@@ -1,4 +1,3 @@
-app_client/*/.js,
-public/*.txt,
-public/libs/,
-public/sass/
+/node_modules
+/public/img
+.env
