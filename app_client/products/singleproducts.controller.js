@@ -34,6 +34,12 @@
 							sngprovm.error 			=		false;
 							sngprovm.success 		=		true;
 							sngprovm.product 		=	response.data.product;
+							console.log(sngprovm.product);
+
+							// checking product has existing comments.
+							if(sngprovm.product.comments.length > 0){
+								sngprovm.hasComments = true;
+							}
 						}
 					})
 					.catch(function(err){

@@ -82,8 +82,7 @@
 				}
 				else{
 					cartvm.commentError	=	false;
-					console.log(cartvm.comment);
-
+					
 					// calling method from service.
 					nclCart
 							.addComment(cartvm.comment)

@@ -55,9 +55,9 @@
 					</div>
 
 					<!-- show comments -->
-					<div class="comemnts-box" ng-if="cartvm.showComments === true">
+					<div class="comemnts-box" ng-if="sngprovm.hasComments === true">
 						<ul class="list comment-list">
-							<li ng-repeat="comment in cartvm.productComments">
+							<li ng-repeat="comment in sngprovm.product.comments | orderBy: 'createdat': true | limitTo: 3">
 								<p class="no-margin">
 									<span class="xs-title medium commenter"><storng>{{comment.commenter}}</storng></span>
 									<span class="xs-title light comment">{{comment.comment}}</span>		
