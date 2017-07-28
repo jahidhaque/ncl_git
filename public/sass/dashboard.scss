@@ -46,3 +46,38 @@
 		border-top: 5px solid $successLbl;
 	}
 }
+
+.product-management{
+	position: relative;
+	.settings-btn{
+		padding: 6px 8px;
+		border-radius: 2px;
+		background-color: $successLbl;
+		color: #fff;
+	}
+	.active-settings-btn{
+		background-image: url('../img/icons/active-settings-btn.png');
+		background-repeat: no-repeat;
+		background-position: center bottom;
+	}
+}
+
+.manage-product-form{
+	position: relative;
+	button[type='submit']{
+		background-color: transparent;
+		border: 0;
+		position: absolute;
+		right: 6px;
+		top: 5px;
+		outline: 0;
+	}
+}
+
+.search-result{
+	position: relative;
+	padding: 15px 0;
+	margin: 0 auto;
+}
+
+

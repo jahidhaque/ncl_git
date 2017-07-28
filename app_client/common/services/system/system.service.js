@@ -36,6 +36,15 @@
 						.catch(handleError);
 		}
 
+
+		// search product
+		var 			searchProducts 		=		function(data){
+			return 	$http
+						.post('/api/search/', data)
+						.then(handleSuccess)
+						.catch(handleError);
+		}
+
 		function 	handleSuccess(response){
 			return response;
 		}
@@ -47,7 +56,8 @@
 		return {
 			createProduct: createProduct,
 			showProducts: showProducts,
-			singleProduct: singleProduct
+			singleProduct: singleProduct,
+			searchProducts: searchProducts
 		};
 	}
 })();

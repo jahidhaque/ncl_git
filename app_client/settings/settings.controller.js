@@ -16,6 +16,10 @@
 		var 	sysvm		=	this;
 
 		sysvm.active		=	"active";
+		sysvm.activeSettingsProduct 	=	"active-settings-btn";
+		sysvm.activeManageProduct 		=	" ";
+		sysvm.addNewProduct 			=	true;
+		sysvm.manageProductOpr			=	false;
 
 		sysvm.products 		=	{
 			product_name: "",
@@ -28,8 +32,21 @@
 			image: ""
 		};
 
+
+		// add new product.
+		sysvm.newProduct 			=	function(){
+			// turn back add product form.
+			sysvm.addNewProduct 	=	true;
+			// turn off manage product area.
+			sysvm.manageProductOpr	=	false;
+
+			// remove active css class.
+			sysvm.activeSettingsProduct 	=	' active-settings-btn';
+			// add new active btn.
+			sysvm.activeManageProduct 		=	" ";
+		}
 		
-		sysvm.saveProduct	=	function(){
+		sysvm.saveProduct		=	function(){			
 
 			sysvm.products.image 	=	$scope.product_img;
 
@@ -75,6 +92,55 @@
 						.catch(function(err){
 							console.log(err);
 						})
+			}
+		}
+
+
+		// manage products.
+		sysvm.manageProduct 	=	function(){
+
+			// remove active css class.
+			sysvm.activeSettingsProduct 	=	' ';
+			// add new active btn.
+			sysvm.activeManageProduct 		=	"active-settings-btn";
+
+			// hide the product add section.
+			sysvm.addNewProduct 			=	false;
+
+			sysvm.manageProductOpr			=	true;
+
+
+			// search object. 
+			sysvm.search 					=	{
+				criteria: ""
+			};
+
+			// search function.
+			sysvm.doSearch		=	function(){
+				if(!sysvm.search.criteria){
+					sysvm.searchError 	=	true;
+					sysvm.searchErrorMessage = "Please search by name, type or product id";
+				}
+				else{
+					systemservice
+								.searchProducts(sysvm.search)
+								.then(function(response){
+									// turn results container on.
+									sysvm.hasSearchResult 		=	 true;
+
+									if(response.data.results.length > 0){
+										sysvm.searchedProducts 	=	response.data.results;
+									}
+									else{
+										sysvm.noProductFound 	=	true;
+										sysvm.searchFeedback 	=	
+										"No results has been found. Please check product name again";
+									}
+								})
+								.catch(function(err){
+									alert(err);
+								})
+				}
 			}
 		}
 	}

@@ -251,3 +251,45 @@ module.exports.createProduct 		=	function(req, res){
 		}
 	})
 }
+
+
+
+/*
+|----------------------------------------------
+| This function will search the database product
+| table and return the results.
+| @author: jahid haque <jahid.haque@yahoo.com>
+| @copyright: nclhalal, 2017
+|----------------------------------------------
+*/
+module.exports.search 				=		function(req, res){
+	if(!req.body && !req.body.criteria){
+		sendJsonResponse(res, 404, {
+			error: 'Invalid request'
+		});
+	}
+	else{
+		// search the products collections.
+		products
+				.find({name: {$regex: req.body.criteria}})
+				.exec(function(err, product){
+					if(!product){
+						sendJsonResponse(res, 404, {
+							error: 'No result found'
+						});
+						return false;
+					}
+					else if(err){
+						sendJsonResponse(res, 404, {
+							error: err
+						});
+						return false;
+					}
+					else {
+						sendJsonResponse(res, 200, {
+							results: product
+						});
+					}
+				})
+	}
+}
