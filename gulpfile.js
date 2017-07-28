@@ -30,7 +30,6 @@ gulp.task('compile-js', function(){
 			'public/libs/master.js'
 		])
 		.pipe(concat('app.js'))
-		.pipe(uglify())
 		.pipe(gulp.dest('public/js/'));
 });
 
