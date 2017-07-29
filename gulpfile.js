@@ -29,8 +29,8 @@ gulp.task('compile-js', function(){
 			'public/libs/modernizr.js',
 			'public/libs/master.js'
 		])
-		.pipe(uglify())
 		.pipe(concat('app.js'))
+		.pipe(uglify())
 		.pipe(gulp.dest('public/js/'));
 });
 
