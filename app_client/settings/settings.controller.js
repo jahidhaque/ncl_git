@@ -127,7 +127,7 @@
 								.then(function(response){
 									// turn results container on.
 									sysvm.hasSearchResult 		=	 true;
-									console.log(response.data.results);
+									console.log(response.data);
 									if(parseInt(response.data.results.length) > 0){
 										sysvm.searchedProducts 	=	response.data.results;
 									}
