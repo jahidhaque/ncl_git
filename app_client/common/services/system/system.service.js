@@ -38,9 +38,9 @@
 
 
 		// search product
-		var 			searchProducts 		=		function(data){
+		var 			searchProducts 		=		function(){
 			return 	$http
-						.get('/api/search/'+data)
+						.get('/api/search/')
 						.then(handleSuccess)
 						.catch(handleError);
 		}

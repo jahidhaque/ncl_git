@@ -123,7 +123,7 @@
 				}
 				else{
 					systemservice
-								.searchProducts(sysvm.search.criteria)
+								.searchProducts()
 								.then(function(response){
 									// turn results container on.
 									// sysvm.hasSearchResult 		=	 true;
