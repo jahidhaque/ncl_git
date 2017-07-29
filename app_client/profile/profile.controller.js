@@ -10,12 +10,18 @@
 		.controller('profileCtrl', profileCtrl);
 
 	// inject dependencies.
-	profileCtrl.$inject = ['authentication'];
+	profileCtrl.$inject = ['authentication', '$location'];
 
-	function profileCtrl(authentication){
+	function profileCtrl(authentication, $location){
 
 		var 	vm	=	this;
 
-		console.log(authentication.currentUser());
+		// checking user logged in or not.
+		if(authentication.isLoggedIn()){
+
+		}
+		else{
+			$location.path('/login');
+		}
 	}
 })();	
