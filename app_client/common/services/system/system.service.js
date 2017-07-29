@@ -40,7 +40,7 @@
 		// search product
 		var 			searchProducts 		=		function(data){
 			return 	$http
-						.post('/api/search/', data)
+						.get('/api/search/'+data)
 						.then(handleSuccess)
 						.catch(handleError);
 		}
