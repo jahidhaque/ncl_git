@@ -15,14 +15,12 @@
 	function 	systemCtrl(systemservice, $scope, productfile, authentication, $location){
 		var 	sysvm		=	this;
 
+
 		// check whether user logged in or not.
 		if(authentication.isLoggedIn()){
-			sysvm.active		=	"active";
-			sysvm.activeSettingsProduct 	=	"active-settings-btn";
-			sysvm.activeManageProduct 		=	" ";
-			sysvm.addNewProduct 			=	true;
-			sysvm.manageProductOpr			=	false;
 
+			sysvm.active					=	"active";
+			
 			sysvm.products 		=	{
 				product_name: "",
 				category: "",
@@ -32,24 +30,11 @@
 				price:"",
 				desc: "",
 				image: ""
-			};
+			};	
+			
+			sysvm.saveProduct		=	function(){		
 
-			// add new product.
-			sysvm.newProduct 			=	function(){
-				// turn back add product form.
-				sysvm.addNewProduct 	=	true;
-				// turn off manage product area.
-				sysvm.manageProductOpr	=	false;
-
-				// remove active css class.
-				sysvm.activeSettingsProduct 	=	' active-settings-btn';
-				// add new active btn.
-				sysvm.activeManageProduct 		=	" ";
-			}
-
-
-			sysvm.saveProduct		=	function(){			
-
+				
 				sysvm.products.image 	=	$scope.product_img;
 
 				if(!sysvm.products.product_name || !sysvm.products.category || !sysvm.products.subcat
@@ -94,55 +79,6 @@
 							.catch(function(err){
 								console.log(err);
 							})
-				}
-			}
-
-			// manage products.
-		sysvm.manageProduct 	=	function(){
-
-			// remove active css class.
-			sysvm.activeSettingsProduct 	=	' ';
-			// add new active btn.
-			sysvm.activeManageProduct 		=	"active-settings-btn";
-
-			// hide the product add section.
-			sysvm.addNewProduct 			=	false;
-
-			sysvm.manageProductOpr			=	true;
-
-
-			// search object. 
-			sysvm.search 					=	{
-				criteria: ""
-			};
-
-			// search function.
-			sysvm.doSearch		=	function(){
-				if(!sysvm.search.criteria){
-					sysvm.searchError 	=	true;
-					sysvm.searchErrorMessage = "Please search by name, type or product id";
-				}
-				else{
-					systemservice
-								.searchProducts(sysvm.search.criteria)
-								.then(function(response){
-									// turn results container on.
-									sysvm.hasSearchResult 		=	 true;
-									console.log(response.data);
-									if(parseInt(response.data.results.length) > 0){
-										sysvm.searchedProducts 	=	response.data.results;
-									}
-									else{
-										sysvm.noProductFound 	=	true;
-										sysvm.searchFeedback 	=	
-										"No results has been found. Please check product name again";
-										sysvm.searchedProducts.length = 0;
-									}
-								})
-								.catch(function(err){
-									alert(err);
-								})
-					}
 				}
 			}
 

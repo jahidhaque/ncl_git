@@ -27,18 +27,14 @@
 							</h1>
 						</div>
 						<div class="pull-right">
-							<a href="" title="add new product" ng-click="sysvm.newProduct()" class="settings-btn {{sysvm.activeSettingsProduct}}"><i class="fa fa-plus-circle" aria-hidden="true"></i><span class="m-r-1 m-l-1">Add</span></a>
-
-							<a href="" title="Manage existing products" ng-click='sysvm.manageProduct()'
-							class="settings-btn m-l-1 {{sysvm.activeManageProduct}}"><i class="fa fa-cogs" aria-hidden="true"></i><span class="m-r-1 m-l-1">Manage</span></a>
-
+							<a href="" title="add new product" class="settings-btn"><i class="fa fa-plus-circle" aria-hidden="true"></i><span class="m-r-1 m-l-1">Add</span></a>
 						</div>
 					</div>
 			
 					<div class="box-body">
 						<form ng-submit='sysvm.saveProduct()' class="product-form" 
 							enctype="multipart/form-data" 
-							name="product_form" ng-if="sysvm.addNewProduct === true">
+							name="product_form">
 							<div class="alert alert-danger m-t-1" ng-show="sysvm.error">
 								<p class="small-title no-margin light">{{sysvm.message}}</p>
 							</div>
@@ -123,41 +119,6 @@
 							<button type="submit" class="btn btn-primary btn-add-product">Save Product</button>
 
 						</form>
-
-						<!-- manage product form -->
-						<form ng-submit="sysvm.doSearch()" ng-if="sysvm.manageProductOpr === true" class="m-t-4 manage-product-form">
-							<input type="text" ng-model="sysvm.search.criteria" class="form-control" placeholder="Search by name, number or type">
-							<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</form>
-
-						<div class="alert alert-danger m-t-2" ng-show="sysvm.searchError">
-							<p class="no-margin no-padding xs-title">{{sysvm.searchErrorMessage}}</p>
-						</div>
-
-						<div class="search-result" ng-if="sysvm.hasSearchResult === true">
-							<h1 class="subtitle light text-center" ng-show="sysvm.noProductFound">
-								{{sysvm.searchFeedback}}
-							</h1>
-
-							<ul class="list no-padding" ng-if="sysvm.searchedProducts.length > 0">
-								<li>
-									<h1 class="text-center subtitle light">Product Found</h1>
-									<hr>
-								</li>
-								<li ng-repeat="product in sysvm.searchedProducts" 
-									class="list-item full pull-left">
-									<p class="xs-title no-margin no-padding">
-										<span class="pull-left">{{product.name}}</span>
-
-										<a href="" title="Edit {{product.name}}" class="pull-right btn btn-warning m-l-3"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-
-										<a href="" title="Delete {{product.name}}" class="pull-right btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
-
-									</p>
-								</li>
-							</ul>
-							<div class="clearfix"></div>
-						</div>
 					</div>
 				</div>
 			</div>
