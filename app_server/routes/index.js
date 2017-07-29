@@ -31,7 +31,7 @@ routes.get('/singleproduct/:productname', systemOperation.showingleProduct);
 // make comment on product.
 routes.post('/makecomment', systemOperation.makeComment);
 routes.post('/createproduct', systemOperation.createProduct);
-routes.get('/search/', systemOperation.search);
+routes.get('/generalsearch/:criteria', systemOperation.generalSearch);
 
 /*
 |----------------------------------------------------------------

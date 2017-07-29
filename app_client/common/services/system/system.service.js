@@ -38,9 +38,9 @@
 
 
 		// search product
-		var 			searchProducts 		=		function(){
+		var 			searchProducts 		=		function(criteria){
 			return 	$http
-						.get('/api/search/')
+						.get('/api/generalsearch/'+criteria)
 						.then(handleSuccess)
 						.catch(handleError);
 		}

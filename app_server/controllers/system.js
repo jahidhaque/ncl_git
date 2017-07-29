@@ -262,8 +262,34 @@ module.exports.createProduct 		=	function(req, res){
 | @copyright: nclhalal, 2017
 |----------------------------------------------
 */
-module.exports.search 				=		function(req, res){
-	sendJsonResponse(res, 200, {
-		data: 'ok'
-	});
+module.exports.generalSearch 				=		function(req, res){
+	if(!req.params && !req.params.criteria){
+		sendJsonResponse(res, 404, {
+			error: 'Invalid request'
+		});
+	}
+	else{
+		// // search the products collections.
+		products
+				.find({name: {$regex: req.params.criteria}})
+				.exec(function(err, product){
+					if(!product){
+						sendJsonResponse(res, 404, {
+							error: 'No result found'
+						});
+						return false;
+					}
+					else if(err){
+						sendJsonResponse(res, 404, {
+							error: err
+						});
+						return false;
+					}
+					else {
+						sendJsonResponse(res, 200, {
+							results: product
+						});
+					}
+				})
+	}
 }
