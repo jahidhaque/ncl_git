@@ -81,6 +81,7 @@ var 		client_files 	= [
 "app_client/register/register.controller.js",
 "app_client/profile/profile.controller.js",
 "app_client/settings/settings.controller.js",
+"app_client/settings/manage/manage.controller.js",
 "app_client/bye/bye.controller.js",
 "app_client/products/singleproducts.controller.js"
 ];

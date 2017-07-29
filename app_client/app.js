@@ -81,6 +81,11 @@
 				controller: "systemCtrl",
 				controllerAs: "sysvm"
 			})
+			.when('/settings/manage', {
+				templateUrl: 'settings/manage/manage.view.html',
+				controller: 'manageCtrl',
+				controllerAs: 'mgvm'
+			})
 			.when('/singleproduct/:productname', {
 				templateUrl: "products/singleproduct.view.html",
 				controller: "singleProductCtrl",
