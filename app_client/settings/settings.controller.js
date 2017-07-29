@@ -128,13 +128,14 @@
 									// turn results container on.
 									sysvm.hasSearchResult 		=	 true;
 
-									if(response.data.results.length > 0){
+									if(parseInt(response.data.results.length) > 0){
 										sysvm.searchedProducts 	=	response.data.results;
 									}
 									else{
 										sysvm.noProductFound 	=	true;
 										sysvm.searchFeedback 	=	
 										"No results has been found. Please check product name again";
+										sysvm.searchedProducts.length = 0;
 									}
 								})
 								.catch(function(err){
