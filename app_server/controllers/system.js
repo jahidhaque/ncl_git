@@ -291,6 +291,8 @@ module.exports.search 				=		function(req, res){
 		// 				});
 		// 			}
 		// 		})
-		console.log(req.body.criteria);
+		sendJsonResponse(res, 200, {
+			data: req.body.criteria
+		});
 	}
 }
