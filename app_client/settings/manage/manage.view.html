@@ -3,10 +3,35 @@
 
 
 <!-- container -->
-<div class="container-fluid">
-	manage
-</div>
+<div class="system-manage">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-24 col-sm-5 col-md-5 col-lg-5">
+				<div class="box shadow">
+					<h2 class="text-center light small-title">Offer Settings</h2>
+					<hr>
+				</div>
+			</div>
 
+			<div class="col-xs-24 col-sm-12 col-md-12 col-lg-12">
+				<div class="box shadow">
+					<h2 class="text-center light small-title">Manage Products</h2>
+					<hr>
+
+					<form ng-submit="mgvm.searchProduct()" class="manage-product-form">
+						<input type="text" placeholder="Search for product by name" ng-model="mgvm.search.name" class="form-control">
+						<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+					</form>
+
+					<div class="search-result" ng-if="mgvm.hasSearchResult === true">
+						hi
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
 
 <!-- footerGeneric -->
 <footer-generic></footer-generic>

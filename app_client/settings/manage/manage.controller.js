@@ -22,7 +22,17 @@
 				$location.path('/profile');
 			}
 			else if(currentUser.status === 'admin'){
-				
+				mgvm.hasSearchResult 	=	false;
+
+				// search object. 
+				mgvm.search 			=	{
+					name: ''
+				};
+
+				// shen search button clicked.
+				mgvm.searchProduct 		=	function(){
+					console.log(mgvm.search);
+				}
 			}
 		}
 		else{
