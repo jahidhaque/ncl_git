@@ -16,5 +16,17 @@
 
 		const	mgvm		=		this;
 
+		if(authentication.isLoggedIn()){
+			const 	currentUser 	=	authentication.currentUser();
+			if(currentUser.status 	=== 'customer'){
+				$location.path('/profile');
+			}
+			else if(currentUser.status === 'admin'){
+				
+			}
+		}
+		else{
+			$location.path('/login');
+		}
 	}
 })();
