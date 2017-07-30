@@ -48,10 +48,12 @@
 									// checking no of records.
 									if(response.data.results.length > 0){
 										mgvm.weHaveResults 	=	true;
+										mgvm.noResults 		=	false;
 										mgvm.searchResults 	=	response.data.results;
 									}
 									else{
 										mgvm.noResults 		=	true;
+										mgvm.weHaveResults 	=	false;
 									}
 								}
 								else if(response.status === 404){
