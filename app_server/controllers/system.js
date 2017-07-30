@@ -276,14 +276,12 @@ module.exports.generalSearch 				=		function(req, res){
 					if(!product){
 						sendJsonResponse(res, 404, {
 							error: 'No result found'
-						});
-						return false;
+						});						
 					}
 					else if(err){
 						sendJsonResponse(res, 404, {
 							error: err
 						});
-						return false;
 					}
 					else {
 						sendJsonResponse(res, 200, {

@@ -10,9 +10,9 @@
 		.module('nclhalal')
 		.controller('manageCtrl', manageCtrl);
 	// adding dependency.
-	manageCtrl.$inject = ['authentication', '$location'];
+	manageCtrl.$inject = ['authentication', '$location', 'systemservice'];
 
-	function manageCtrl(authentication, $location){
+	function manageCtrl(authentication, $location, systemservice){
 
 		const	mgvm		=		this;
 
@@ -31,7 +31,39 @@
 
 				// shen search button clicked.
 				mgvm.searchProduct 		=	function(){
-					console.log(mgvm.search);
+					
+					if(!mgvm.search.name){
+						mgvm.searchFormError = true;
+						mgvm.emptySearch = "Please enter product name to search";
+					}
+					else{
+						mgvm.searchFormError = false;
+
+						// now call the system service function to search the db.
+						systemservice
+							.searchProducts(mgvm.search.name)
+							.then(function(response){
+								if(response.status === 200){
+									mgvm.hasSearchResult =	true;
+									// checking no of records.
+									if(response.data.results.length > 0){
+										mgvm.weHaveResults 	=	true;
+										mgvm.searchResults 	=	response.data.results;
+									}
+									else{
+										mgvm.noResults 		=	true;
+									}
+								}
+								else if(response.status === 404){
+									mgvm.systemError 	=	true;
+								}
+
+							})
+							.catch(function(err){
+								alert(err);
+							})
+					}
+					
 				}
 			}
 		}

@@ -21,10 +21,32 @@
 					<form ng-submit="mgvm.searchProduct()" class="manage-product-form">
 						<input type="text" placeholder="Search for product by name" ng-model="mgvm.search.name" class="form-control">
 						<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+						<div class="alert alert-danger m-t-3" ng-if="mgvm.searchFormError === true">
+							<p class="no-margin no-padding light">{{mgvm.emptySearch}}</p>
+						</div>
 					</form>
 
 					<div class="search-result" ng-if="mgvm.hasSearchResult === true">
-						hi
+						<!-- when there is error while searching -->
+						<h1 class="subtitle text-center light" ng-if="mgvm.systemError === true">Search system error! Please contact system developer</h1>
+
+						<!-- when there is no search results -->						
+						<div class="alert alert-warning" ng-if="mgvm.noResults === true">
+							<h1 class="subtitle text-center no-margin light">No product found. Please check product name</h1>
+						</div>
+						
+						<!-- when we have search results -->
+						<ul class="list no-padding" ng-if="mgvm.weHaveResults === true">
+							<li ng-repeat="result in mgvm.searchResults" class="pull-left list-item full">
+								<span class="pull-left light small-title">{{result.name}}</span>
+								<a href="" title="Delete {{result.name}}" class="pull-right btn btn-danger m-l-2"><i class="fa fa-trash" aria-hidden="true"></i></a>
+								<a href="" title="Edit {{result.name}}" class="pull-right btn btn-warning m-r-1"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+								
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+
 					</div>
 				</div>
 			</div>
