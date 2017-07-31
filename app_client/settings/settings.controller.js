@@ -30,6 +30,7 @@
 				
 				sysvm.products 		=	{
 					product_name: "",
+					brand: "",
 					category: "",
 					subcat: "",
 					unit: "",
@@ -43,7 +44,7 @@
 					
 					sysvm.products.image 	=	$scope.product_img;
 
-					if(!sysvm.products.product_name || !sysvm.products.category || !sysvm.products.subcat
+					if(!sysvm.products.product_name || !sysvm.products.brand || !sysvm.products.category || !sysvm.products.subcat
 						|| !sysvm.products.unit || !sysvm.products.inventoryunit || !sysvm.products.price
 						|| !sysvm.products.desc){
 						sysvm.error 	=	true;

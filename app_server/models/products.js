@@ -19,6 +19,7 @@ var 			productSchema 		=		new mongoose.Schema({
 	name: {type: String, required: true},
 	category: {type: String, required: true},
 	subcat: {type: String, required: true},
+	brand: {type: String, required: true},
 	unit: {type: String, required: true},
 	inventoryunit: {type: Number, required: true},
 	createdat: {type: Date, default: Date.now, required: true},
