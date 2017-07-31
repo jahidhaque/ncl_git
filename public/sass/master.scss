@@ -97,7 +97,6 @@
 |----------------------------------------------------------------
  */
 .slider-container{
-	padding: 45px 0;
 	position: relative;
 	background-color: #fff;
 	.slider-area{
@@ -110,7 +109,7 @@
 	}
 	.carousel-indicators{
 		position: absolute;
-		bottom: -30px;
+		bottom: 20px;
 		li{
 			width: 15px;
 			height: 15px;
@@ -125,6 +124,36 @@
 			border: 1px solid $borderLight;
 			background-color: $border;
 		}
+	}
+}
+
+.quarbani{
+	position: relative;
+	padding: 25px 0;
+	min-height: 395px;
+	background-color: #F5F17D;
+	h2{
+		color: #DE2F2F;
+	}
+}
+
+.loyalty-card-promo{
+	position: relative;
+	padding: 25px 0;
+	min-height: 395px;
+	background-color: #70C754;
+	color: #fff;
+}
+
+.saturday-fish-promo{
+	position: relative;
+	padding: 25px 0;
+	min-height: 395px;
+	background-color: #CC9618;
+	color: #fff;
+
+	hr{
+		border-top: 1px solid #E6B032;
 	}
 }
 
