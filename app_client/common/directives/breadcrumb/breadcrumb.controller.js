@@ -19,17 +19,7 @@
 		// set reward on by default.
 		brdvm.customerPromo			=		true;
 
-		brdvm.path 					=		$location.path();
-
-		if(brdvm.path 	===	"/"){
-			brdvm.shownextcrumb	=	false;
-			brdvm.noBorder 		=	'no-border';
-		}
-		else{
-			brdvm.shownextcrumb	=	true;
-		}
-
-		console.log(brdvm.path);
+			
 
 		// check if user already logged in or not.
 		if(authentication.isLoggedIn() !== false){
