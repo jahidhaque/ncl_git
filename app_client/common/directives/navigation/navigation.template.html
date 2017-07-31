@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">NCL Halal</a>
+          <a class="navbar-brand" href="/">NCL Halal - <span class="light xs-title">HMC</span></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,8 +29,8 @@
                   <a href="/#register/?page={{navvm.currentPath}}">Register</a>
                 </li>
                 <li ng-hide="navvm.isLoggedIn"><a href="/#login/?page={{navvm.currentPath}}">Login</a></li>  
-                <li class="{{sysvm.active}}" ng-show="navvm.adminon"><a href="/#settings"><i class="fa fa-cogs m-r-2" are-hidden="true"></i> Settings</a></li>
-                <li ng-show="navvm.isLoggedIn"><a href="/#profile" title="{{navvm.currentUser.name}}'s profile">{{navvm.currentUser.name}}</a></li> 
+                <li class="{{sysvm.active}}" ng-show="navvm.adminon"><a href="/#settings"><i class="fa fa-cogs" are-hidden="true"></i></a></li>
+                <li ng-show="navvm.isLoggedIn"><a href="/#profile" title="{{navvm.currentUser.name}}'s profile"><i class="fa fa-user" aria-hidden="true"></i></a></li> 
                 <li ng-show="navvm.isLoggedIn" ng-click="navvm.logout()" title="Logout from the app">
                   <a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 </li>
