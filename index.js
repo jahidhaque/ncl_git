@@ -54,6 +54,7 @@ app.use(express.static(__dirname + path.join('/app_client')));
 var 		client_files 	= [
 "app_client/app.js",
 "app_client/common/services/authentication/authentication.service.js",
+"app_client/common/filter/pretty-url.filter.js",
 "app_client/common/services/system/system.service.js",
 "app_client/common/services/cart/cart.service.js",
 "app_client/common/services/generalqueries/generalqueries.service.js",

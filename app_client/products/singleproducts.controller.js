@@ -21,8 +21,8 @@
 		// show product.
 		sngprovm.showProduct 		=	function(){
 
-			sngprovm.productname 			=		$routeParams.productname;
-
+			sngprovm.productname 		=		$routeParams.productname.replace(/-/g," ");
+			
 			// empty product object.
 			sngprovm.product 			=		"";
 
