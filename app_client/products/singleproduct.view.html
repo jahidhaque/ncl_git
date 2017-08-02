@@ -5,7 +5,7 @@
 <bread-crumb></bread-crumb>
 
 <!-- content -->
-<div class="container">
+<div class="container" ng-init="sngprovm.showProduct()">
 	<h1 class="big-title text-center light" ng-if="sngprovm.error">
 		{{sngprovm.message}}
 	</h1>
@@ -35,19 +35,19 @@
 					<hr>
 					<shopping-cart></shopping-cart>
 
-					<div class="comment-form" ng-if="cartvm.commentForm === true">
-						<form ng-submit="cartvm.makeComment()">
+					<div class="comment-form" ng-if="sngprovm.commentForm === true">
+						<form ng-submit="sngprovm.makeComment()">
 							<br/>
-							<div class="alert alert-danger" ng-show="cartvm.commentError">
-								<p class="xs-title no-margin regular">{{cartvm.commentError_message}}</p>
+							<div class="alert alert-danger" ng-show="sngprovm.commentError">
+								<p class="xs-title no-margin regular">{{sngprovm.commentError_message}}</p>
 							</div>
 
 							<div class="form-group">
-								<textarea class="form-control light sub-title" col='2' rows="2" placeholder="make your comment" ng-model="cartvm.comment.message"></textarea>
+								<textarea class="form-control light sub-title" col='2' rows="2" placeholder="make your comment" ng-model="sngprovm.comment.message"></textarea>
 							</div>
 
 							<div class="form-group">
-								<a href="" ng-click="cartvm.cancleComment()" title="cancle comment" class="btn btn-info pull-left">Cancle</a>
+								<a href="" ng-click="sngprovm.cancleComment()" title="cancle comment" class="btn btn-info pull-left">Cancle</a>
 								<button type="submit" class="btn btn-success pull-right">Save</button>
 							</div>
 						</form>
