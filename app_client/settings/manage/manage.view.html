@@ -40,7 +40,7 @@
 						<ul class="list no-padding" ng-if="mgvm.weHaveResults === true">
 							<li ng-repeat="result in mgvm.searchResults" class="pull-left list-item full">
 								<span class="pull-left light small-title">{{result.name}}</span>
-								<a href="" ng-click="mgvm.deleteProduct(result._id)" title="Delete {{result.name}}" class="pull-right btn btn-danger m-l-2"><i class="fa fa-trash" aria-hidden="true"></i></a>
+								<a href="#" ng-click="mgvm.deleteProduct(result._id)" title="Delete {{result.name}}" class="pull-right btn btn-danger m-l-2"><i class="fa fa-trash" aria-hidden="true"></i></a>
 								<a href="" title="Edit {{result.name}}" class="pull-right btn btn-warning m-r-1"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 								<div class="alert alert-danger small-alert m-t-2 pull-left full" ng-if="mgvm.deleteError === true">
 									<p class="no-margin small-title">{{mgvm.deleteErrorMessage}}</p>
