@@ -226,6 +226,7 @@ module.exports.createProduct 		=	function(req, res){
 	var 		product 			=	new products();
 
 	product.name 			=		req.body.product_name;
+	product.brand 			=		req.body.brand;
 	product.category 		=		req.body.category;
 	product.subcat 			=		req.body.subcat;
 	product.unit 			=		req.body.unit;
