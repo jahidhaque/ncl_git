@@ -45,6 +45,15 @@
 						.catch(handleError);
 		}
 
+
+		// delete product by id.
+		var 			deleteProduct 		=		function(product_id){
+			return 	$http
+						.delete('/api/deleteproduct/'+product_id)
+						.then(handleSuccess)
+						.catch(handleError);
+		}
+
 		function 	handleSuccess(response){
 			return response;
 		}
@@ -55,6 +64,7 @@
 
 		return {
 			createProduct: createProduct,
+			deleteProduct: deleteProduct,
 			showProducts: showProducts,
 			singleProduct: singleProduct,
 			searchProducts: searchProducts

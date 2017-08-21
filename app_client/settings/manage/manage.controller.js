@@ -30,8 +30,7 @@
 				};
 
 				// shen search button clicked.
-				mgvm.searchProduct 		=	function(){
-					
+				mgvm.searchProduct 		=	function(){					
 					if(!mgvm.search.name){
 						mgvm.searchFormError = true;
 						mgvm.emptySearch = "Please enter product name to search";
@@ -64,8 +63,29 @@
 							.catch(function(err){
 								alert(err);
 							})
-					}
-					
+					}	
+				}
+
+				// delete function.
+				mgvm.deleteProduct 			=		function(product_id){
+					// calling method from system service and passing the id.
+					systemservice
+						.deleteProduct(product_id)
+						.then(function(response){
+							if(response.data.error){
+								mgvm.deleteSuccess = false;
+								mgvm.deleteError = true;
+								mgvm.deleteErrorMessage = response.data.error;
+							}
+							else if(response.data.success){
+								mgvm.deleteError = false;
+								mgvm.deleteSuccess = true;
+								mgvm.deleteSuccessMessage = response.data.success;
+							}
+						})
+						.catch(function(err){
+							alert(err);
+						})
 				}
 			}
 		}

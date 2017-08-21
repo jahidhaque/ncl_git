@@ -254,6 +254,42 @@ module.exports.createProduct 		=	function(req, res){
 }
 
 
+/*
+|----------------------------------------------
+| This following function will delete product
+| from the database based on given id
+| @author: jahid haque <jahid.haque@yahoo.com>
+| @copyright: nclhalal, 2017
+|----------------------------------------------
+*/
+module.exports.deleteProduct 		=	function(req, res){
+	if(!req.params && !req.params.product_id){
+		sendJsonResponse(res, 404, {
+			error: "Invalid request"
+		});
+	}
+	else{
+		products
+			.findByIdAndRemove(req.params.product_id, function(err, product){
+				if(err){
+					sendJsonResponse(res, 404, {
+						error: err
+					});
+				}
+				else if(!product){
+					sendJsonResponse(res, 404, {
+						error: "No product found by the given id"
+					});
+				}
+				else{
+					sendJsonResponse(res, 200, {
+						success: "Product has been deleted"
+					});
+				}
+			})
+	}
+}
+
 
 /*
 |----------------------------------------------
