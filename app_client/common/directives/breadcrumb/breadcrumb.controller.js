@@ -15,11 +15,8 @@
 
 	function breadcrumbCtrl(authentication, $location, $timeout){
 		var 	brdvm 				=		this;
-
 		// set reward on by default.
 		brdvm.customerPromo			=		true;
-
-			
 
 		// check if user already logged in or not.
 		if(authentication.isLoggedIn() !== false){
@@ -77,8 +74,14 @@
 			brdvm.generalRewardPromo 			=	true;	
 		}
 
+		brdvm.search 	=	{
+			query: "" 
+		};
 
-		
+		// search functionality for product.
+		brdvm.searchProduct		=		function(){
+			brdvm.searchPalet 		=	true;
+		}
 
 	}
 })();

@@ -5,14 +5,14 @@
 				<ol class="list-inline breadcrumb-list">
 					<li class="{{brdvm.noBorder}}">Call us on 0191 272 3232</li>
 					<li>
-						<span class="regular active">Book Quarbani</span>
+						<span class="regular active">To book any order</span>
 					</li>
 				</ol>
 			</div>
 
 			<div class="col-xs-21 col-sm-12 col-md-12 col-lg-12 product-search relative">
-				<form>
-					<input type="text" placeholder="Search your desire product" class="form-control">
+				<form ng-submit="brdvm.searchProduct()">
+					<input type="text" ng-model="brdvm.search.query" placeholder="Search your desire product" class="form-control">
 					<button type="submit"><i class="fa fa-search" aria-hidden='true'></i></button>
 				</form>
 			</div>
@@ -74,3 +74,10 @@
 
 	</div>
 </div>
+
+<div class="search-results" ng-if="brdvm.searchPalet === true">
+	<div class="container" ng-if="brdvm.searchResultsOn === true">
+		{{brdvm.search.query}}
+	</div>
+</div>
+
