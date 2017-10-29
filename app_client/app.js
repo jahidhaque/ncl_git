@@ -91,6 +91,11 @@
 				controller: "singleProductCtrl",
 				controllerAs: "sngprovm"
 			})
+			.when('/search', {
+				templateUrl: 'search/search.view.html',
+				controller: 'searchCtrl',
+				controllerAs: 'srcvm',
+			})
 			
 
 		// html5 mode for # tag.

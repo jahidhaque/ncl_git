@@ -84,7 +84,8 @@ var 		client_files 	= [
 "app_client/settings/settings.controller.js",
 "app_client/settings/manage/manage.controller.js",
 "app_client/bye/bye.controller.js",
-"app_client/products/singleproducts.controller.js"
+"app_client/products/singleproducts.controller.js",
+"app_client/search/search.controller.js",
 ];
 
 var uglified = uglifyjs.minify(client_files, {compress: true});

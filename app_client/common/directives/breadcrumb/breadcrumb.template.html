@@ -11,8 +11,8 @@
 			</div>
 
 			<div class="col-xs-21 col-sm-12 col-md-12 col-lg-12 product-search relative">
-				<form ng-submit="brdvm.searchProduct()">
-					<input type="text" ng-model="brdvm.search.query" placeholder="Search your desire product" class="form-control">
+				<form action="/search" method="GET">
+					<input type="text" ng-model="brdvm.search.query" placeholder="Search your desire product" class="form-control" name="q">
 					<button type="submit"><i class="fa fa-search" aria-hidden='true'></i></button>
 				</form>
 			</div>

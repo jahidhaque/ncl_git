@@ -1,0 +1,40 @@
+<!-- navigation -->
+<navigation></navigation>
+
+<!-- site breadcrumb -->
+<bread-crumb></bread-crumb>
+
+<!-- search result -->
+<div class="full-page-container wbg">
+	<div class="container-fluid" ng-init="srcvm.search()">
+		<div class="row" ng-if="srcvm.noresult === true">
+			<h1 class="big-title regular text-center">No Search Result Found</h1>
+		</div>
+
+		<div class="row" ng-if="srcvm.results === true">
+			<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+				<div class="boxContainer boxShadow">
+					<h1 class="sub-big-title light text-center">We have found - </h1>
+					<hr>
+					<div ng-repeat="search in srcvm.searchResults" class="row">
+						<a href='singleproduct/{{search.name | prettyUrl}}' title="Veiw {{search.name}} in details">
+							<div class="hidden-sm col-sm-4 col-md-4 col-lg-4">
+								<img src="img/products/{{search.image}}" alt="{{search.name}}">
+							</div>
+							<div class="col-xs-24 col-sm-17 col-md-17 col-lg-17">
+								<h2 class="m-t-3 text-center subtitle light">{{search.name}}</h2>
+							</div>
+
+							<div class="hidden-sm col-sm-3 col-md-3 col-lg-3">
+								<p class="no-margin title light text-center">{{search.price | currency: '£'}}</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footerGeneric -->
+<footer-generic></footer-generic>

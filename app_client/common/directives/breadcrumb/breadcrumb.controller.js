@@ -74,10 +74,7 @@
 			brdvm.generalRewardPromo 			=	true;	
 		}
 
-		brdvm.search 	=	{
-			query: "" 
-		};
-
+		
 		// search functionality for product.
 		brdvm.searchProduct		=		function(){
 			brdvm.searchPalet 		=	true;
